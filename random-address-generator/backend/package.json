@@ -1,0 +1,25 @@
+{
+  "name": "random-address-generator-backend",
+  "version": "1.0.0",
+  "description": "Express API that returns realistic fake addresses for USA, UK, Canada, and Australia",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "faker",
+    "address",
+    "express",
+    "api"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@faker-js/faker": "^9.0.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.0"
+  }
+}

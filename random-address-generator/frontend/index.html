@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Address Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>&#128205;</text></svg>" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-inner">
+        <h1>Random Address Generator</h1>
+        <button id="theme-toggle" class="icon-button" type="button" aria-label="Toggle theme">
+          <span class="theme-icon" aria-hidden="true">&#9790;</span>
+        </button>
+      </div>
+      <p class="tagline">Fake but realistic addresses for USA, UK, Canada, and Australia.</p>
+    </header>
+
+    <main class="container">
+      <form id="generator-form" class="generator-form" novalidate>
+        <div class="form-row">
+          <label for="country">Country</label>
+          <select id="country" name="country" required>
+            <option value="USA">United States (USA)</option>
+            <option value="UK">United Kingdom (UK)</option>
+            <option value="CA">Canada (CA)</option>
+            <option value="AU">Australia (AU)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="count">How many?</label>
+          <input
+            id="count"
+            name="count"
+            type="number"
+            min="1"
+            max="50"
+            value="1"
+            inputmode="numeric"
+          />
+        </div>
+        <button type="submit" id="generate-btn" class="primary-button">
+          Generate Address
+        </button>
+      </form>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+
+      <section id="results" class="results" aria-live="polite"></section>
+    </main>
+
+    <footer class="app-footer">
+      <span>Built with Express &amp; @faker-js/faker.</span>
+    </footer>
+
+    <template id="address-card-template">
+      <article class="address-card">
+        <header class="card-header">
+          <span class="card-badge"></span>
+          <button type="button" class="copy-button" aria-label="Copy address to clipboard">
+            <span class="copy-label">Copy</span>
+          </button>
+        </header>
+        <dl class="address-fields">
+          <div><dt>Full Name</dt><dd data-field="fullName"></dd></div>
+          <div><dt>Street Address</dt><dd data-field="streetAddress"></dd></div>
+          <div><dt>City</dt><dd data-field="city"></dd></div>
+          <div><dt>State / Province</dt><dd data-field="state"></dd></div>
+          <div><dt>ZIP / Postal Code</dt><dd data-field="zipCode"></dd></div>
+          <div><dt>Phone Number</dt><dd data-field="phoneNumber"></dd></div>
+        </dl>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
